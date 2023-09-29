@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 int main(){
     int NumberofPrimes=0;
-    long long int number=1; 
+    long long int number=2; 
     short int Prime=0;
     while (NumberofPrimes!=10001){
     Prime=1;
@@ -18,5 +19,6 @@ int main(){
         }
     number++;
     }
+    system("pause");
     return 0;
 }

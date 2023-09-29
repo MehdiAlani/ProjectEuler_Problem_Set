@@ -1,8 +1,13 @@
 #include <stdio.h>
-#include <windows.h>
+#include <time.h>
+#include <stdlib.h>
 int main(){
     short int Found=0;
-    int SmallestNumber=0;
+    long long int SmallestNumber=0;
+    clock_t start,end;
+    double time;
+    FILE *Pfile = fopen("TestLog.txt","w");
+    start = clock();
     while (!Found){
         Found=1;
         SmallestNumber++;
@@ -12,8 +17,13 @@ int main(){
                 break;
             }
         }
-        printf("Not this : %d\n",SmallestNumber);
+        end = clock();
+        time=(end-start)/CLOCKS_PER_SEC; 
+        fprintf(Pfile,"Time Passed:%lfs",time);
+        fflush(Pfile);
+        fclose(Pfile);
+        Pfile = fopen("TestLog.txt","w");
     }
-    Beep(9000,800);
-    printf("\n\nFound Number : %d",SmallestNumber);
+    fprintf(Pfile,"Found Number : %lld   on time: %lfs",SmallestNumber,time);
+
 }
