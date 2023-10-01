@@ -34,7 +34,7 @@ int main(){
     long int Max=0;
     for(int i=0;i<sizeNumber-DIGITSNUM;i++){
         for (int j=i; j < i + DIGITSNUM;j++){
-            product=product*num(LargeNumber[j]);
+            product= product * num(LargeNumber[j]);
             printf("%ld and with count %d\n",product,i);
             if(product==0)break;
         }
