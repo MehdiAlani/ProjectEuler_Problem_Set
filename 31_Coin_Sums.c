@@ -3,28 +3,25 @@
 
 #include <stdio.h>
 
-
 int main(){
     long long int Combinations = 7;
     int p1=0 , p2=0 , p5=0 , p10=0 , p20=0 , p50=0, P=0;
-    float Sum = 0;
+    int Sum = 0;
     while(P*1 < 2){
-        while( p50 * 50/200.0 < 2){
-            while( p20 * 20/200.0 < 2){
-                while( p10 * 10/200.0 < 2){
-                    while( p5 * 5/200.0 < 2){
-                        while( p2 * 2 / 200.0 < 2){
-                            while( p1 * 1/200.0 < 2 && Sum < 2){
-                                Sum = P * 1 + p50 * 50/200.0 + p20 * 20/200.0 + p10 * 10/200.0;
-                                Sum = Sum + p5 * 5/200.0 + p2 * 2 / 200.0 + p1 * 1/200.0;
-                                //printf("Sum=%f    %d %d %d %d %d %d %d \n",Sum,p1,p2,p5,p10,p20,p50,P);
-                                if(Sum == 2) {
+        while(p50 < 4){
+            while( p20 < 10){
+                while( p10 < 20){
+                    while(p5 < 40){
+                        while(p2  <  100){
+                            while(p1 < 200){
+                                Sum = P * 100 + p50 * 50 +  p20 * 20 + p10 * 10 + p5 * 5 +  p2 * 2 + p1;
+                                if(Sum == 200) {
                                     Combinations++;
-                                    printf("%d    %d %d %d %d %d %d %d \n",Combinations,p1,p2,p5,p10,p20,p50,P);
+                                    printf("%lld   p1:%d p2:%d p5:%d p10:%d p20:%d p50:%d P:%d \n",Combinations,p1,p2,p5,p10,p20,p50,P);
+                                    break;
                                 }
                                 p1++;
                             }
-                            Sum = 0;
                             p1 = 0;
                             p2++;
                         }
@@ -43,6 +40,7 @@ int main(){
         p50=0;
         P++;
     }
-    printf("%d",Combinations);
+    Combinations++;
+    printf("The Final Number of Posibilties are %d",Combinations);
 }
 
