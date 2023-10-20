@@ -1,7 +1,6 @@
 // https://projecteuler.net/problem=29
 
 #include <stdio.h>
-#include <math.h>
 
 #define MaxHighNumber 99999999
 
