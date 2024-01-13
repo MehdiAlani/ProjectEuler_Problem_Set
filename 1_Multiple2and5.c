@@ -1,14 +1,16 @@
+// https://projecteuler.net/problem=1
+
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+
+#define MAXNUMBER 1000
+
 int main(){
     int Sum=0;
-    for (int i = 3; i<1000; i++){
-        if (i%5==0 || i%3 == 0){
-           Sum=Sum+i;
-        }
-    }
-    printf("%d",Sum);
-    system("pause");
+    int i;
+    for (i = 3; i < MAXNUMBER; i++)
+        if (!(i%5) || !(i%3))
+           Sum = Sum + i;
+    printf("The Sum = %d\n",Sum);
     return 0;
 }

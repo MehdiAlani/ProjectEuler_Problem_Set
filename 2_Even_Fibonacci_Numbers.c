@@ -1,16 +1,20 @@
+// https://projecteuler.net/problem=2
+
+
+#define  MAXNUMBER 4000000
 #include <stdio.h>
+#include <stdlib.h>
+
 
 int main(){
-    int temp;
-    int FirstNumber = 1;
-    int SecondNumber = 2;
-    int Sum=0;
-    while (SecondNumber<4000000){
-        if(SecondNumber%2==0)Sum=Sum+SecondNumber;
-        temp=SecondNumber;
-        SecondNumber = SecondNumber + FirstNumber;
-        FirstNumber=temp;
+    int U0 = 1;
+    int U1 = 2;
+    long long int Sum = 2;
+    while (U1 < MAXNUMBER){
+        U1 = U1 + U0;
+        if(!(U1%2)) Sum = Sum + U1;
+        U0 = U1 - U0;
     }
-    printf("The Simple Sum is :%d",Sum);
+    printf("The Simple Sum is : %lld\n",Sum);
     return 0;
 }
